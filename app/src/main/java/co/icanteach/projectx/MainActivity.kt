@@ -1,5 +1,6 @@
 package co.icanteach.projectx
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -35,7 +36,8 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         moviesViewModel =
-            ViewModelProviders.of(this, viewModelProviderFactory).get(PopularTVShowsViewModel::class.java)
+            ViewModelProviders.of(this, viewModelProviderFactory)
+                .get(PopularTVShowsViewModel::class.java)
 
         moviesViewModel.getPopularTvShowsLiveData().observeNonNull(this) {
             renderPopularTVShows(it)
@@ -66,6 +68,17 @@ class MainActivity : AppCompatActivity() {
             executePendingBindings()
         }
         tvShowsFeedAdapter.setTvShows(feedViewState.getPopularTvShows())
+        tvShowsFeedAdapter.onItemClick = { popularTvShowItem ->
+
+             val  intent : Intent = DetailActivity.newIntent(this, popularTvShowItem.name!!,
+                 popularTvShowItem.img!!,
+                 popularTvShowItem.occupation!!,
+                 popularTvShowItem.status!!,
+                 popularTvShowItem.nickname!!,
+                 popularTvShowItem.appearance!!)
+            startActivity(intent)
+
+        }
     }
 
     private fun fetchMovies() {

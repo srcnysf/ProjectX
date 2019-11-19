@@ -1,5 +1,6 @@
 package co.icanteach.projectx.common.di.module
 
+import co.icanteach.projectx.DetailActivity
 import co.icanteach.projectx.MainActivity
 import co.icanteach.projectx.common.di.scope.ActivityScope
 import co.icanteach.projectx.ui.populartvshows.PopularTvShowActivityModule
@@ -12,4 +13,8 @@ abstract class ActivityBuilderModule {
     @ActivityScope
     @ContributesAndroidInjector(modules = [PopularTvShowActivityModule::class])
     abstract fun bindMainActivity(): MainActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = [PopularTvShowActivityModule::class])
+    abstract fun bindDetailActivity(): DetailActivity
 }
