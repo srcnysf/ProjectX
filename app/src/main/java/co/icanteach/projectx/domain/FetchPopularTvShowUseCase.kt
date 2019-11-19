@@ -11,9 +11,9 @@ class FetchPopularTvShowUseCase @Inject constructor(
     private val mapper: PopularTvShowMapper
 ) {
 
-    fun fetchMovies(page: Int): Observable<Resource<List<PopularTvShowItem>>> {
+    fun fetchMovies(): Observable<Resource<List<PopularTvShowItem>>> {
         return repository
-            .fetchMovies(page)
+            .fetchMovies()
             .map { resource ->
                 Resource(
                     status = resource.status,

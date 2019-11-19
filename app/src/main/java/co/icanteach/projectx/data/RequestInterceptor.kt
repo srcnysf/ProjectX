@@ -12,7 +12,7 @@ class RequestInterceptor @Inject constructor() : Interceptor {
         var request = chain.request()
 
         val httpUrl = request.url.newBuilder()
-            .addQueryParameter(API_KEY_QUERY, API_KEY_VALUE)
+//            .addQueryParameter(API_KEY_QUERY, API_KEY_VALUE)
             .build()
 
         request = request.newBuilder().url(httpUrl).build()

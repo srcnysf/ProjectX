@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         savedInstanceState.runIfNull {
-            fetchMovies(FIRST_PAGE)
+            fetchMovies()
         }
         initPopularTVShowsRecyclerView()
     }
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
             layoutManager = linearLayoutManager
             addOnScrollListener(object : EndlessScrollListener(linearLayoutManager) {
                 override fun onLoadMore(page: Int) {
-                    fetchMovies(page)
+                    fetchMovies()
                 }
             })
         }
@@ -68,8 +68,8 @@ class MainActivity : AppCompatActivity() {
         tvShowsFeedAdapter.setTvShows(feedViewState.getPopularTvShows())
     }
 
-    private fun fetchMovies(page: Int) {
-        moviesViewModel.fetchMovies(page)
+    private fun fetchMovies() {
+        moviesViewModel.fetchMovies()
     }
 
     companion object {
