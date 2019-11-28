@@ -8,7 +8,7 @@ class PopularTVShowsFeedViewState(
     val error: Throwable? = null,
     val data: List<PopularTvShowItem>? = null
 ) {
-    fun getPopularTvShows() = data ?: mutableListOf()
+    fun getPopularTvShows() =  data ?: mutableListOf()
 
     fun isLoading() = status == Status.LOADING
 

@@ -78,5 +78,9 @@ dependencies {
     testImplementation "com.google.truth:truth:${libraries.truthVersion}"
     testImplementation "io.mockk:mockk:${libraries.mockKVersion}"
     testImplementation "androidx.arch.core:core-testing:${libraries.coreTestingVersion}"
+    implementation 'com.github.mancj:MaterialSearchBar:0.7.1'
+    implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.1.1'
+
+
 
 }

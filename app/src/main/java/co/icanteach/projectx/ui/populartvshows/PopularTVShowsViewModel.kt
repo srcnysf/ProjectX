@@ -34,4 +34,14 @@ class PopularTVShowsViewModel @Inject constructor(private val fetchPopularTvShow
             data = resource.data
         )
     }
+
+    private fun onSearchReady(resource: Resource<List<PopularTvShowItem>>) {
+        popularTvShowsLiveData.value = PopularTVShowsFeedViewState(
+            status = resource.status,
+            error = resource.error,
+            data = resource.data
+        )
+    }
+
+
 }

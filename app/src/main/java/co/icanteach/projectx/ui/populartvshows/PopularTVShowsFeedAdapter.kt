@@ -30,6 +30,7 @@ class PopularTVShowsFeedAdapter @Inject constructor() :
     private fun getTvShow(position: Int) = popularTvShows[position]
 
     fun setTvShows(tvShows: List<PopularTvShowItem>) {
+        popularTvShows.clear()
         val beforeSize = popularTvShows.size
         popularTvShows.addAll(tvShows)
         notifyItemRangeInserted(beforeSize, tvShows.size)

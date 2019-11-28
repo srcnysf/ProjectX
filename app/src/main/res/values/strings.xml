@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">ProjectX</string>
     <string name="movie_rating">rating : %1$s</string>
+
+    <string-array name="seasons">
+        <item>Season 1</item>
+        <item>Season 2</item>
+        <item>Season 3</item>
+        <item>Season 4</item>
+        <item>Season 5</item>
+    </string-array>
 </resources>
